@@ -5,3 +5,78 @@ body {
     line-height: 1.8;
     font-weight: 400;
 }
+
+/* --------------------------------------------- */
+/* SideBar CSS */
+/* -------------------------------------------- */
+.sidebar__hamburger__section {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 30px 15px;
+    z-index: 50;
+    transition-duration: 500ms;
+}
+
+.sidebar__hamburger__translate {
+    transform: translateX(300px);
+}
+
+.hamburger__lines__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 30px;
+    height: 15px;
+    position: relative;
+}
+
+.hamburger__lines__section:hover>.hamburger__line1__onhover {
+    top: -2.5px;
+}
+
+.hamburger__lines__section:hover>.hamburger__line3__onhover {
+    bottom: -2.5px;
+}
+
+.hamburger__line {
+    width: 30px;
+    height: 2px;
+    transition-duration: 200ms;
+    background-color: black;
+    position: absolute;
+}
+
+.hamburger__line1 {
+    top: 0;
+}
+
+.hamburger__line2 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger__line3 {
+    bottom: 0;
+}
+
+.hamburger__line__cross:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger__line__cross:first-child {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger__line__cross:last-child {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+@media (min-width: 1024px) {
+    .sidebar__hamburger__section {
+        display: none;
+    }
+}
