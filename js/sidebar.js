@@ -12,3 +12,21 @@ hamburgerLines.addEventListener('click', function () {
     }
     sidebarContent.classList.toggle('sidebar__content__open')
 });
+
+async function loadBasicData() {
+    const data = (await fetchData()).basic
+    document.getElementsByClassName('sidebar__name')[0].textContent = data.firstName + " " + data.middleName + " " + data.lastName
+
+    const jobText = document.createTextNode(data.job);
+    let spanElement = document.createElement('span');
+
+    spanElement.className = 'sidebar__country';
+    spanElement.textContent = " " + "in" + " " + data.country
+
+    let jobElement = document.getElementsByClassName('sidebar__job')[0]
+    jobElement.appendChild(jobText);
+    jobElement.appendChild(spanElement);
+
+}
+
+loadBasicData()
