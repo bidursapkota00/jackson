@@ -1,0 +1,135 @@
+.sidebar__hamburger__section {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 30px 15px;
+    z-index: 50;
+    transition-duration: 500ms;
+}
+
+.sidebar__hamburger__translate {
+    transform: translateX(300px);
+}
+
+.hamburger__lines__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 30px;
+    height: 15px;
+    position: relative;
+}
+
+.hamburger__lines__section:hover>.hamburger__line1__onhover {
+    top: -2.5px;
+}
+
+.hamburger__lines__section:hover>.hamburger__line3__onhover {
+    bottom: -2.5px;
+}
+
+.hamburger__line {
+    width: 30px;
+    height: 2px;
+    transition-duration: 200ms;
+    background-color: black;
+    position: absolute;
+}
+
+.hamburger__line1 {
+    top: 0;
+}
+
+.hamburger__line2 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger__line3 {
+    bottom: 0;
+}
+
+.hamburger__line__cross:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger__line__cross:first-child {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger__line__cross:last-child {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.sidebar__content {
+    width: 300px;
+    height: 100vh;
+    z-index: 40;
+    overflow-y: scroll;
+    background: #f2f3f7;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    transition: all 500ms ease;
+}
+
+.sidebar__content__open {
+    left: 0;
+}
+
+.sidebar__photo__section {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar__img {
+    border-radius: 100%;
+    margin-bottom: 30px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.sidebar__name {
+    all: unset;
+    font-family: 'Playfair', serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 7.5px;
+    text-transform: capitalize;
+}
+
+.sidebar__job {
+    all: unset;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12.5px;
+    line-height: 17.5px;
+    color: #2c98f0;
+    text-transform: uppercase;
+}
+
+.sidebar__country {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 1024px) {
+    .sidebar__hamburger__section {
+        display: none;
+    }
+
+    .sidebar__content {
+        left: 0;
+    }
+}
+
+@media (min-width: 1170px) {
+    .sidebar__content {
+        left: calc((100% - 1170px) / 2);
+    }
+}
