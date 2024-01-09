@@ -12,9 +12,6 @@
 }
 
 .hamburger__lines__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     cursor: pointer;
     width: 30px;
     height: 15px;
